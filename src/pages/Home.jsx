@@ -1,5 +1,4 @@
 import React from 'react';
-import Placeholder from '../components/Placeholder';
 import './Home.css';
 
 const Ticker = () => {
@@ -27,8 +26,8 @@ export default function Home({ onNav }) {
       {/* HERO */}
       <div className="hero">
         <div className="hero-texture" />
-        <div className="hero-ph">
-          <Placeholder label="Hero — add your best facility or product photo" style={{ position: 'absolute', inset: 0, minHeight: 'unset' }} />
+        <div className="hero-img-bg">
+          <img src="/images/IMAGE_1___Hero_background.png" alt="Manufacturing facility" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
         </div>
         <div className="hero-overlay" />
         <div className="hero-fire-top" />
@@ -63,7 +62,7 @@ export default function Home({ onNav }) {
       <section className="section overview-section" style={{ background: '#fff', padding: 0 }}>
         <div className="overview-grid">
           <div className="ov-img-wrap">
-            <Placeholder label="Facility or product photo" style={{ height: '100%', minHeight: 500 }} />
+            <img src="/images/IMAGE_2___Homepage_overview_section.png" alt="Manufacturing operations" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
             <div className="ov-badge">
               <div className="ov-badge-big">SS 202</div>
               <div className="ov-badge-sm">Food-grade steel</div>
@@ -102,13 +101,15 @@ export default function Home({ onNav }) {
           </div>
           <div className="prod-grid">
             {[
-              { name: 'Stainless steel plates', desc: 'Classic thali in food-grade SS. Built for everyday home use and beyond.', label: 'SS Plates photo' },
-              { name: 'Stainless steel bowls', desc: 'Seamless katori and serving bowls. Smooth finish, sturdy for every meal.', label: 'SS Bowls photo' },
-              { name: 'Stainless steel glasses', desc: 'Rust-free tumblers built to last. A staple in every Indian household.', label: 'SS Glasses photo' },
-              { name: 'Other kitchenware', desc: 'More SS kitchen items available. Tell us what you need.', label: 'Other kitchenware photo' },
+              { name: 'Stainless steel plates', desc: 'Classic thali in food-grade SS. Built for everyday home use and beyond.', img: '/images/IMAGE_5___Products_page___Product_1.png', alt: 'Stainless steel plates' },
+              { name: 'Stainless steel bowls', desc: 'Seamless katori and serving bowls. Smooth finish, sturdy for every meal.', img: '/images/IMAGE_6___Products_page___Product_2_.png', alt: 'Stainless steel bowls' },
+              { name: 'Stainless steel glasses', desc: 'Rust-free tumblers built to last. A staple in every Indian household.', img: '/images/IMAGE_7___Products_page___Product_3_.png', alt: 'Stainless steel glasses' },
+              { name: 'Other kitchenware', desc: 'More SS kitchen items available. Tell us what you need.', img: '/images/IMAGE_8___Products_page___Product_4.png', alt: 'Other metal products' },
             ].map((p) => (
               <div key={p.name} className="prod-card" onClick={() => onNav('Products')}>
-                <Placeholder label={p.label} style={{ height: 240 }} />
+                <div className="prod-img">
+                  <img src={p.img} alt={p.alt} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                </div>
                 <div className="prod-info">
                   <div className="lbl accent" style={{ marginBottom: 4 }}>Kitchenware</div>
                   <h4 style={{ color: '#fff', fontFamily: 'Barlow Condensed', fontSize: 20, textTransform: 'uppercase', fontWeight: 700, marginBottom: 6 }}>{p.name}</h4>
@@ -152,7 +153,7 @@ export default function Home({ onNav }) {
       {/* QUALITY SPLIT */}
       <div className="q-split">
         <div className="q-img-side">
-          <Placeholder label="Quality / inspection photo" style={{ height: '100%', minHeight: 460 }} />
+          <img src="/images/IMAGE_3___Homepage_quality_section.png" alt="Quality inspection" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
         </div>
         <div className="q-content-side">
           <div className="lbl">Our promise</div>
@@ -198,12 +199,14 @@ export default function Home({ onNav }) {
           </div>
           <div className="blog-grid">
             {[
-              { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for.' },
-              { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the production process — explained simply for every buyer.' },
-              { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — the reasons SS stays dominant in Indian homes.' },
+              { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for.', img: '/images/Blog_Image_1___Steel_grades_article.png' },
+              { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the production process — explained simply for every buyer.', img: '/images/Blog_Image_2___Manufacturing_process_article_.png' },
+              { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — the reasons SS stays dominant in Indian homes.', img: '/images/Blog_Image_3___Industry_insights_article.png' },
             ].map((b) => (
               <div key={b.title} className="blog-card" onClick={() => onNav('Blog')}>
-                <Placeholder label="Blog image" style={{ height: 190 }} />
+                <div className="blog-img" style={{ height: 190, overflow: 'hidden' }}>
+                  <img src={b.img} alt={b.title} style={{ width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.5s' }} />
+                </div>
                 <div className="blog-body">
                   <span className="blog-cat">{b.cat}</span>
                   <span className="blog-date">{b.date}</span>
@@ -215,7 +218,6 @@ export default function Home({ onNav }) {
           </div>
         </div>
       </section>
-
 
     </div>
   );

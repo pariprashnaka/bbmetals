@@ -1,5 +1,4 @@
 import React from 'react';
-import Placeholder from '../components/Placeholder';
 
 /* ─────────── INNER HERO ─────────── */
 function InnerHero({ page, title, sub }) {
@@ -64,7 +63,7 @@ export function About({ onNav }) {
                   ))}
                 </ul>
               </div>
-              <Placeholder label="Facility overview photo" style={{ height: 240, borderRadius: 2 }} />
+              <img src="/images/IMAGE_4___About_us_page.png" alt="Our facility" style={{ width:'100%', height:'240px', objectFit:'cover', borderRadius:2 }} />
             </div>
           </div>
 
@@ -103,10 +102,10 @@ export function About({ onNav }) {
 /* ─────────── PRODUCTS ─────────── */
 export function Products({ onNav }) {
   const products = [
-    { name: 'Stainless steel plates', desc: 'Classic thali in food-grade stainless steel. Durable, easy to clean, built for everyday use at home, in restaurants, or in large kitchens.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Sizes','Multiple available'],['Suitable for','Home, hotel, hostel, canteen'],['Orders','Single piece or bulk']], label: 'Add SS plates photo' },
-    { name: 'Stainless steel bowls', desc: 'Katori and serving bowls for everyday use. Smooth rim, seamless build, and a bright finish that stays good wash after wash.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Sizes','Multiple available'],['Suitable for','Home, dining, gifting sets'],['Orders','Single piece or bulk']], label: 'Add SS bowls photo' },
-    { name: 'Stainless steel glasses', desc: 'Rust-free tumblers that are a staple in every Indian home. Lightweight, easy to hold, and safe for all ages.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Sizes','Multiple capacities'],['Suitable for','Home, travel, gifting'],['Orders','Single piece or bulk']], label: 'Add SS glasses photo' },
-    { name: 'Other SS kitchenware', desc: 'Beyond plates, bowls, and glasses — we produce a range of everyday stainless steel kitchen items. Reach out and we\'ll help.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Suitable for','Home and kitchen use'],['Orders','Ask for availability']], label: 'Add other kitchenware photo' },
+    { name: 'Stainless steel plates', desc: 'Classic thali in food-grade stainless steel. Durable, easy to clean, built for everyday use at home, in restaurants, or in large kitchens.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Sizes','Multiple available'],['Suitable for','Home, hotel, hostel, canteen'],['Orders','Single piece or bulk']], img: '/images/IMAGE_5___Products_page___Product_1.png', alt: 'Stainless steel plates' },
+    { name: 'Stainless steel bowls', desc: 'Katori and serving bowls for everyday use. Smooth rim, seamless build, and a bright finish that stays good wash after wash.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Sizes','Multiple available'],['Suitable for','Home, dining, gifting sets'],['Orders','Single piece or bulk']], img: '/images/IMAGE_6___Products_page___Product_2_.png', alt: 'Stainless steel bowls' },
+    { name: 'Stainless steel glasses', desc: 'Rust-free tumblers that are a staple in every Indian home. Lightweight, easy to hold, and safe for all ages.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Sizes','Multiple capacities'],['Suitable for','Home, travel, gifting'],['Orders','Single piece or bulk']], img: '/images/IMAGE_7___Products_page___Product_3_.png', alt: 'Stainless steel glasses' },
+    { name: 'Other SS kitchenware', desc: 'Beyond plates, bowls, and glasses — we produce a range of everyday stainless steel kitchen items. Reach out and we\'ll help.', specs: [['Material grade','SS 202 / SS 304'],['Finish','Mirror polished'],['Suitable for','Home and kitchen use'],['Orders','Ask for availability']], img: '/images/IMAGE_8___Products_page___Product_4.png', alt: 'Other metal products' },
   ];
 
   return (
@@ -117,7 +116,9 @@ export function Products({ onNav }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {products.map(p => (
               <div key={p.name} style={{ background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden' }}>
-                <Placeholder label={p.label} style={{ height: 230 }} />
+                <div className="pf-img">
+                  <img src={p.img} alt={p.alt} style={{ width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.4s' }} />
+                </div>
                 <div style={{ padding: 26 }}>
                   <div className="lbl accent" style={{ marginBottom: 8 }}>Kitchenware</div>
                   <h3 style={{ fontSize: 22, marginBottom: 8, color: 'var(--navy)' }}>{p.name}</h3>
@@ -133,7 +134,10 @@ export function Products({ onNav }) {
             {/* Coming soon */}
             {[{ name: 'Aluminium products', desc: 'Aluminium kitchenware and utility products — planned as we expand manufacturing capacity.' }, { name: 'OEM & custom products', desc: 'Contract manufacturing and custom metal products for brands and large buyers — a future phase.' }].map(p => (
               <div key={p.name} style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', opacity: 0.6, overflow: 'hidden' }}>
-                <Placeholder label="Coming soon" style={{ height: 230, background: '#2a3348' }} />
+                <div style={{ height: 230, background: '#2a3348', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', gap:8 }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="rgba(255,255,255,0.15)"><path d="M12 15.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4zm0-8a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zM20 4h-3.17L15 2H9L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/></svg>
+                  <span style={{ fontSize:10, color:'rgba(255,255,255,0.2)', letterSpacing:'0.14em', textTransform:'uppercase' }}>Coming soon</span>
+                </div>
                 <div style={{ padding: 26 }}>
                   <div className="lbl" style={{ color: 'var(--text-mid)', marginBottom: 8 }}>Coming soon</div>
                   <h3 style={{ fontSize: 22, marginBottom: 8, color: 'var(--text-mid)' }}>{p.name}</h3>
@@ -206,10 +210,10 @@ export function Quality() {
 /* ─────────── BLOG ─────────── */
 export function Blog({ onNav }) {
   const posts = [
-    { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for when buying.' },
-    { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the full production process — blanking, forming, polishing, inspection, packaging.' },
-    { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — why SS stays dominant in Indian homes decade after decade.' },
-    { cat: 'Product knowledge', date: '18 Dec 2024', title: 'Material thickness and durability: what gauge means in SS', desc: 'Gauge numbers explained simply — actual thickness in mm and what thicker steel gives you in real use.' },
+    { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for when buying.', img: '/images/Blog_Image_1___Steel_grades_article.png' },
+    { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the full production process — blanking, forming, polishing, inspection, packaging.', img: '/images/Blog_Image_2___Manufacturing_process_article_.png' },
+    { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — why SS stays dominant in Indian homes decade after decade.', img: '/images/Blog_Image_3___Industry_insights_article.png' },
+    { cat: 'Product knowledge', date: '18 Dec 2024', title: 'Material thickness and durability: what gauge means in SS', desc: 'Gauge numbers explained simply — actual thickness in mm and what thicker steel gives you in real use.', img: '/images/Blog_Image_4___Material_thickness_article.png' },
   ];
 
   return (
@@ -221,7 +225,9 @@ export function Blog({ onNav }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {posts.map(p => (
                 <div key={p.title} style={{ display: 'grid', gridTemplateColumns: '200px 1fr', background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden', cursor: 'pointer', transition: 'box-shadow 0.2s' }}>
-                  <Placeholder label="Blog image" style={{ height: 150 }} />
+                  <div className="bch-img">
+                    <img src={p.img} alt={p.title} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                  </div>
                   <div style={{ padding: '18px 24px' }}>
                     <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--accent)' }}>{p.cat}</span>
                     <span style={{ fontSize: 11, color: 'var(--text-mid)', marginLeft: 10 }}>{p.date}</span>
@@ -256,23 +262,49 @@ export function Blog({ onNav }) {
 /* ─────────── GALLERY ─────────── */
 export function Gallery() {
   const [active, setActive] = React.useState('all');
+  const [lightbox, setLightbox] = React.useState(null);
+
   const items = [
-    { cat: 'manufacturing', label: 'Press operation' },
-    { cat: 'products', label: 'Stainless plates' },
-    { cat: 'manufacturing', label: 'Polishing line' },
-    { cat: 'products', label: 'Stainless bowls' },
-    { cat: 'facility', label: 'Production floor' },
-    { cat: 'products', label: 'Stainless glasses' },
-    { cat: 'manufacturing', label: 'Quality inspection' },
-    { cat: 'packaging', label: 'Trade packaging' },
-    { cat: 'facility', label: 'Warehouse' },
+    { cat: 'manufacturing', label: 'Press operation',      img: '/images/Gallery_Image_1___Press_operation.png' },
+    { cat: 'products',      label: 'Metal products',       img: '/images/Gallery_Image_2___Metal_products.png' },
+    { cat: 'manufacturing', label: 'Polishing line',       img: '/images/Gallery_Image_3___Polishing_line.png' },
+    { cat: 'manufacturing', label: 'Quality inspection',   img: '/images/Gallery_Image_4___Quality_inspection.png' },
+    { cat: 'facility',      label: 'Production floor',     img: '/images/Gallery_Image_5___Production_floor.png' },
+    { cat: 'products',      label: 'Metal components',     img: '/images/Gallery_Image_6___Metal_components.png' },
+    { cat: 'manufacturing', label: 'Metal forming',        img: '/images/Gallery_Image_7___Metal_forming.png' },
+    { cat: 'packaging',     label: 'Packaging',            img: '/images/Gallery_Image_8___Packaging.png' },
+    { cat: 'facility',      label: 'Warehouse',            img: '/images/Gallery_Image_9___Warehouse.png' },
   ];
+
   const tabs = ['all', 'products', 'manufacturing', 'facility', 'packaging'];
   const filtered = active === 'all' ? items : items.filter(i => i.cat === active);
 
   return (
     <div>
-      <InnerHero page="Gallery" title="Gallery" sub="Products, facility, and manufacturing — add your own photos to each slot." />
+      <InnerHero page="Gallery" title="Gallery" sub="Products, facility, and manufacturing — click any image to enlarge." />
+
+      {/* LIGHTBOX */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.92)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center', padding:24, cursor:'zoom-out' }}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            style={{ position:'absolute', top:20, right:24, background:'none', border:'none', color:'#fff', fontSize:32, cursor:'pointer', lineHeight:1 }}
+          >×</button>
+          <img
+            src={lightbox.img}
+            alt={lightbox.label}
+            style={{ maxWidth:'92vw', maxHeight:'88vh', objectFit:'contain', borderRadius:4 }}
+            onClick={e => e.stopPropagation()}
+          />
+          <div style={{ position:'absolute', bottom:24, left:'50%', transform:'translateX(-50%)', color:'rgba(255,255,255,0.5)', fontSize:12, letterSpacing:'0.1em', textTransform:'uppercase' }}>
+            {lightbox.label}
+          </div>
+        </div>
+      )}
+
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
@@ -282,12 +314,27 @@ export function Gallery() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 4 }}>
             {filtered.map((item, i) => (
-              <div key={i} style={{ aspectRatio: '4/3', overflow: 'hidden' }}>
-                <Placeholder label={item.label} style={{ height: '100%' }} />
+              <div
+                key={i}
+                style={{ aspectRatio: '4/3', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
+                onClick={() => setLightbox(item)}
+              >
+                <img
+                  src={item.img}
+                  alt={item.label}
+                  style={{ width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.4s' }}
+                  onMouseOver={e => e.currentTarget.style.transform='scale(1.05)'}
+                  onMouseOut={e => e.currentTarget.style.transform='scale(1)'}
+                />
+                <div style={{ position:'absolute', bottom:0, left:0, right:0, background:'linear-gradient(transparent, rgba(0,0,0,0.5))', padding:'20px 12px 10px', opacity:0, transition:'opacity 0.2s' }}
+                  onMouseOver={e => e.currentTarget.style.opacity=1}
+                  onMouseOut={e => e.currentTarget.style.opacity=0}
+                >
+                  <span style={{ color:'#fff', fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase' }}>{item.label}</span>
+                </div>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 12, color: 'var(--text-mid)', textAlign: 'center', marginTop: 18 }}>Replace each placeholder with your own facility and product photography.</p>
         </div>
       </section>
     </div>
@@ -314,12 +361,16 @@ export function Contact() {
       buyer_type:   form.buyer_type.value,
       product:      form.product.value,
       message:      form.message.value,
+      to_email:     'bishwambharbharatmetals@gmail.com',
     };
 
-    // EmailJS — replace the three IDs below with your own from emailjs.com
-    const SERVICE_ID  = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+    // EmailJS setup — replace the 3 values below with your own from emailjs.com
+    // Step 1: go to emailjs.com and sign up free
+    // Step 2: add Gmail as your email service
+    // Step 3: create a template and copy the 3 IDs below
+    const SERVICE_ID  = 'service_lqry8kn';
+    const TEMPLATE_ID = 'template_6nbc1wm';
+    const PUBLIC_KEY  = 'dK5VXP7qyhoST_w4z';
 
     fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
