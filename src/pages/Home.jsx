@@ -216,32 +216,6 @@ export default function Home({ onNav }) {
         </div>
       </section>
 
-      {/* GALLERY PREVIEW */}
-      <section className="section" style={{ background: 'var(--navy2)' }}>
-        <div className="container">
-          <div className="flex-between mb-40">
-            <div>
-              <div className="lbl">Facility & products</div>
-              <div className="accent-rule" />
-              <h2 style={{ color: '#fff' }}>Gallery</h2>
-            </div>
-            <button className="btn-outline-light" onClick={() => onNav('Gallery')}>View full gallery</button>
-          </div>
-          <div className="gallery-mosaic">
-            {[
-              { label: 'Manufacturing floor', big: true },
-              { label: 'Products' },
-              { label: 'Polishing line' },
-              { label: 'Quality inspection' },
-              { label: 'Packaging' },
-            ].map((g, i) => (
-              <div key={i} className={`gal-item ${g.big ? 'gal-big' : ''}`}>
-                <Placeholder label={g.label} style={{ height: '100%', minHeight: g.big ? 'unset' : 200 }} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
     </div>
   );

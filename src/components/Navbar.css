@@ -19,8 +19,9 @@
   width: 44px; height: 44px; flex-shrink: 0;
   border: 1.5px dashed rgba(196,168,130,0.3);
   border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
   background: rgba(196,168,130,0.04);
+  overflow: hidden;
 }
 .nb-logo-ph {
   font-size: 8px; font-weight: 700;
