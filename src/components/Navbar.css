@@ -1,0 +1,81 @@
+.navbar {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--navy);
+  border-bottom: 1px solid var(--rule);
+  height: 66px;
+}
+
+.nb-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 36px;
+  height: 66px; display: flex; align-items: center; justify-content: space-between;
+}
+
+.nb-brand {
+  display: flex; align-items: center; gap: 13px;
+  background: none; border: none; cursor: pointer; text-align: left;
+}
+
+.nb-logo-slot {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border: 1.5px dashed rgba(196,168,130,0.3);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(196,168,130,0.04);
+}
+.nb-logo-ph {
+  font-size: 8px; font-weight: 700;
+  color: rgba(196,168,130,0.3); letter-spacing: 0.1em;
+  font-family: 'Inter', sans-serif;
+}
+
+.nb-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.nb-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px; font-weight: 700; color: #fff;
+  text-transform: uppercase; letter-spacing: 0.03em;
+}
+.nb-sub {
+  font-size: 9px; color: rgba(196,168,130,0.5);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.nb-links { display: flex; gap: 2px; }
+.nb-link {
+  font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.4);
+  padding: 7px 13px; cursor: pointer; border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+  border: none; background: none;
+  font-family: 'Inter', sans-serif; letter-spacing: 0.02em;
+}
+.nb-link:hover { color: rgba(255,255,255,0.85); }
+.nb-link.active { color: var(--sand); }
+
+.nb-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+}
+.nb-hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: rgba(255,255,255,0.5); border-radius: 1px;
+}
+
+.nb-mobile {
+  position: fixed; top: 66px; left: 0; right: 0;
+  background: var(--navy2); border-bottom: 1px solid var(--rule);
+  z-index: 199; padding: 16px 24px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.nb-mobile .nb-link {
+  display: block; padding: 11px 12px; text-align: left;
+  color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 900px) {
+  .nb-links { display: none; }
+  .nb-hamburger { display: flex; }
+}
+@media (max-width: 480px) {
+  .nb-inner { padding: 0 20px; }
+  .nb-name { font-size: 13px; }
+}
