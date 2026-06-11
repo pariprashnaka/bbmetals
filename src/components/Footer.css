@@ -21,13 +21,18 @@
 }
 .ft-desc { font-size: 13px; color: rgba(255,255,255,0.28); line-height: 1.7; max-width: 250px; }
 
-.ft-insta {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
-  background: rgba(196,168,130,0.08); border: 1px solid rgba(196,168,130,0.2);
-  color: var(--sand); font-size: 12px; font-weight: 500; padding: 8px 14px;
-  border-radius: 2px; transition: background 0.15s;
+.ft-socials {
+  display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap;
 }
-.ft-insta:hover { background: rgba(196,168,130,0.15); }
+
+.ft-social-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(196,168,130,0.08); border: 1px solid rgba(196,168,130,0.2);
+  color: var(--sand); font-size: 12px; font-weight: 500; padding: 7px 12px;
+  border-radius: 2px; transition: background 0.15s; text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+.ft-social-btn:hover { background: rgba(196,168,130,0.2); }
 
 .ft-col h5 {
   font-family: 'Barlow Condensed', sans-serif;
