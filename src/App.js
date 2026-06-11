@@ -3,6 +3,8 @@ import './index.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatBar from './components/FloatBar';
+import LeadPopup from './components/LeadPopup';
+import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import './pages/Home.css';
 import { About, Products, Quality, Blog, Gallery, Contact } from './pages/Pages';
@@ -34,6 +36,8 @@ export default function App() {
       <main>{renderPage()}</main>
       <Footer onNav={navigate} />
       <FloatBar onEnquire={() => navigate('Contact')} />
+      <LeadPopup />
+      <Chatbot />
     </>
   );
 }
