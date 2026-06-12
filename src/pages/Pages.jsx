@@ -23,7 +23,7 @@ export function About({ onNav }) {
       <InnerHero page="About us" title="About us" sub="Built on manufacturing discipline, honest quality, and a long-term vision." />
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72 }}>
+          <div className="page-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72 }}>
             <div>
               <div className="lbl">Our background</div>
               <div className="accent-rule" />
@@ -31,12 +31,10 @@ export function About({ onNav }) {
               <p style={{ marginBottom: 14 }}>Bishwambhar Bharat Metals was built with one conviction: Indian manufacturing deserves to be done properly — with discipline in process, integrity in materials, and a long-term view of what this enterprise can become.</p>
               <p style={{ marginBottom: 14 }}>We began with stainless steel kitchenware because it is a product every Indian household needs, and because it gave us the foundation to build real manufacturing capability.</p>
               <p style={{ marginBottom: 32 }}>Our roadmap doesn't end at plates and bowls. We are building towards aluminium products, industrial components, OEM supply, and more — step by step, quality first.</p>
-
               <hr className="div-lt" />
-
               <div className="lbl">Our values</div>
               <div className="accent-rule" />
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14, marginTop: 14 }}>
+              <div className="page-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14, marginTop: 14 }}>
                 {[['Quality first','No compromise on material grade or process standard.'],['Integrity','We state what we supply, and supply what we state.'],['Consistency','Same standard batch to batch, order to order.'],['Accountability','We stand behind every product that leaves our facility.'],['Customer focus','One set or a truckload — you matter equally.'],['Improvement','Always looking to improve process and product.']].map(([t, d]) => (
                   <div key={t} style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', padding: '20px 16px', borderTop: '3px solid var(--accent)' }}>
                     <h4 style={{ marginBottom: 6 }}>{t}</h4>
@@ -45,7 +43,6 @@ export function About({ onNav }) {
                 ))}
               </div>
             </div>
-
             <div>
               <div style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', padding: 24, marginBottom: 18 }}>
                 <h4 style={{ fontFamily: 'Barlow Condensed', fontSize: 15, fontWeight: 700, textTransform: 'uppercase', marginBottom: 14, paddingBottom: 10, borderBottom: '2px solid var(--accent)' }}>Company at a glance</h4>
@@ -69,7 +66,7 @@ export function About({ onNav }) {
 
           <hr className="div-lt" />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72 }}>
+          <div className="page-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72 }}>
             <div>
               <div className="lbl">Our vision</div>
               <div className="accent-rule" />
@@ -113,7 +110,7 @@ export function Products({ onNav }) {
       <InnerHero page="Products" title="Our products" sub="Stainless steel kitchenware — durable, food-safe, and made to last for years." />
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+          <div className="page-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {products.map(p => (
               <div key={p.name} style={{ background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden' }}>
                 <div className="pf-img">
@@ -130,8 +127,6 @@ export function Products({ onNav }) {
                 </div>
               </div>
             ))}
-
-            {/* Coming soon */}
             {[{ name: 'Aluminium products', desc: 'Aluminium kitchenware and utility products — planned as we expand manufacturing capacity.' }, { name: 'OEM & custom products', desc: 'Contract manufacturing and custom metal products for brands and large buyers — a future phase.' }].map(p => (
               <div key={p.name} style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', opacity: 0.6, overflow: 'hidden' }}>
                 <div style={{ height: 230, background: '#2a3348', display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', gap:8 }}>
@@ -139,7 +134,7 @@ export function Products({ onNav }) {
                   <span style={{ fontSize:10, color:'rgba(255,255,255,0.2)', letterSpacing:'0.14em', textTransform:'uppercase' }}>Coming soon</span>
                 </div>
                 <div style={{ padding: 26 }}>
-                  <div className="lbl" style={{ color: 'var(--text-mid)', marginBottom: 8 }}>Coming soon</div>
+                  <div className="lbl" style={{ color:'var(--muted)', marginBottom: 8 }}>Coming soon</div>
                   <h3 style={{ fontSize: 22, marginBottom: 8, color: 'var(--text-mid)' }}>{p.name}</h3>
                   <p style={{ fontSize: 13 }}>{p.desc}</p>
                   <div style={{ marginTop: 16 }}><div className="spec-row"><span className="k">Status</span><span className="v" style={{ color: 'var(--text-mid)' }}>In planning</span></div></div>
@@ -147,7 +142,6 @@ export function Products({ onNav }) {
               </div>
             ))}
           </div>
-
           <div style={{ background: 'var(--navy)', padding: '44px 48px', textAlign: 'center', marginTop: 36 }}>
             <h3 style={{ color: '#fff', marginBottom: 10 }}>Looking for something specific?</h3>
             <p style={{ color: 'rgba(255,255,255,0.35)', maxWidth: 460, margin: '0 auto 22px' }}>Single set for your home or a large order for your business — we're happy to help either way.</p>
@@ -182,7 +176,7 @@ export function Quality() {
           <div className="accent-rule" />
           <h2 style={{ color: 'var(--navy)', marginBottom: 14 }}>Quality at every stage</h2>
           <p style={{ maxWidth: 580, marginBottom: 36 }}>Controls are applied at each production stage so defects are found before they reach you — not after.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 18 }}>
+          <div className="page-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 18 }}>
             {stages.map(([n,t,d]) => (
               <div key={n} style={{ background: '#fff', border: '1px solid var(--rule-lt)', padding: '28px 24px', borderLeft: '4px solid var(--accent)' }}>
                 <div style={{ fontFamily: 'Barlow Condensed', fontSize: 52, fontWeight: 800, color: 'var(--light)', lineHeight: 1, marginBottom: 6 }}>{n}</div>
@@ -192,7 +186,7 @@ export function Quality() {
             ))}
           </div>
           <hr className="div-lt" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 18 }}>
+          <div className="page-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 18 }}>
             {[['📋','Material documentation','Grade certification filed for every batch. We do not mix grades without clear identification.'],['🎯','Tooling discipline','Production tooling inspected regularly. Worn tooling replaced before dimensional drift affects quality.'],['🤝','Complaint resolution','Valid complaints investigated at batch level. Resolved with replacement or credit. Used to improve our process.']].map(([icon,t,d]) => (
               <div key={t} style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', padding: '26px 22px', borderTop: '3px solid var(--sand)' }}>
                 <div style={{ fontSize: 28, marginBottom: 10 }}>{icon}</div>
@@ -221,11 +215,11 @@ export function Blog({ onNav }) {
       <InnerHero page="Blog" title="Industry insights" sub="Knowledge on stainless steel products, manufacturing, and the Indian metals industry." />
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 44 }}>
+          <div className="blog-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 44 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {posts.map(p => (
-                <div key={p.title} style={{ display: 'grid', gridTemplateColumns: '200px 1fr', background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden', cursor: 'pointer', transition: 'box-shadow 0.2s' }}>
-                  <div className="bch-img">
+                <div key={p.title} className="blog-hcard" style={{ display: 'grid', gridTemplateColumns: '200px 1fr', background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden', cursor: 'pointer', transition: 'box-shadow 0.2s' }}>
+                  <div style={{ overflow: 'hidden', height: 150 }}>
                     <img src={p.img} alt={p.title} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
                   </div>
                   <div style={{ padding: '18px 24px' }}>
@@ -237,7 +231,7 @@ export function Blog({ onNav }) {
                 </div>
               ))}
             </div>
-            <div>
+            <div className="blog-sidebar">
               <div style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', padding: 20, marginBottom: 18 }}>
                 <h4 style={{ fontFamily: 'Barlow Condensed', fontSize: 14, fontWeight: 700, textTransform: 'uppercase', marginBottom: 14, paddingBottom: 10, borderBottom: '2px solid var(--accent)' }}>Categories</h4>
                 {[['Product knowledge','4'],['Manufacturing','5'],['Industry insights','3'],['Company updates','2']].map(([cat,count]) => (
@@ -283,25 +277,11 @@ export function Gallery() {
     <div>
       <InnerHero page="Gallery" title="Gallery" sub="Products, facility, and manufacturing — click any image to enlarge." />
 
-      {/* LIGHTBOX */}
       {lightbox && (
-        <div
-          onClick={() => setLightbox(null)}
-          style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.92)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center', padding:24, cursor:'zoom-out' }}
-        >
-          <button
-            onClick={() => setLightbox(null)}
-            style={{ position:'absolute', top:20, right:24, background:'none', border:'none', color:'#fff', fontSize:32, cursor:'pointer', lineHeight:1 }}
-          >×</button>
-          <img
-            src={lightbox.img}
-            alt={lightbox.label}
-            style={{ maxWidth:'92vw', maxHeight:'88vh', objectFit:'contain', borderRadius:4 }}
-            onClick={e => e.stopPropagation()}
-          />
-          <div style={{ position:'absolute', bottom:24, left:'50%', transform:'translateX(-50%)', color:'rgba(255,255,255,0.5)', fontSize:12, letterSpacing:'0.1em', textTransform:'uppercase' }}>
-            {lightbox.label}
-          </div>
+        <div onClick={() => setLightbox(null)} style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.92)', zIndex:1000, display:'flex', alignItems:'center', justifyContent:'center', padding:24, cursor:'zoom-out' }}>
+          <button onClick={() => setLightbox(null)} style={{ position:'absolute', top:20, right:24, background:'none', border:'none', color:'#fff', fontSize:32, cursor:'pointer', lineHeight:1 }}>×</button>
+          <img src={lightbox.img} alt={lightbox.label} style={{ maxWidth:'92vw', maxHeight:'88vh', objectFit:'contain', borderRadius:4 }} onClick={e => e.stopPropagation()} />
+          <div style={{ position:'absolute', bottom:24, left:'50%', transform:'translateX(-50%)', color:'rgba(255,255,255,0.5)', fontSize:12, letterSpacing:'0.1em', textTransform:'uppercase' }}>{lightbox.label}</div>
         </div>
       )}
 
@@ -312,26 +292,13 @@ export function Gallery() {
               <button key={t} onClick={() => setActive(t)} style={{ fontFamily: 'Barlow Condensed', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '7px 16px', border: `1.5px solid ${active===t?'var(--navy)':'var(--rule-lt)'}`, background: active===t?'var(--navy)':'#fff', color: active===t?'var(--sand)':'var(--text-mid)', cursor: 'pointer', borderRadius: 2, transition: 'all 0.15s' }}>{t}</button>
             ))}
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 4 }}>
+          <div className="gallery-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 4 }}>
             {filtered.map((item, i) => (
-              <div
-                key={i}
-                style={{ aspectRatio: '4/3', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
-                onClick={() => setLightbox(item)}
-              >
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  style={{ width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.4s' }}
+              <div key={i} style={{ aspectRatio: '4/3', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }} onClick={() => setLightbox(item)}>
+                <img src={item.img} alt={item.label} style={{ width:'100%', height:'100%', objectFit:'cover', transition:'transform 0.4s' }}
                   onMouseOver={e => e.currentTarget.style.transform='scale(1.05)'}
                   onMouseOut={e => e.currentTarget.style.transform='scale(1)'}
                 />
-                <div style={{ position:'absolute', bottom:0, left:0, right:0, background:'linear-gradient(transparent, rgba(0,0,0,0.5))', padding:'20px 12px 10px', opacity:0, transition:'opacity 0.2s' }}
-                  onMouseOver={e => e.currentTarget.style.opacity=1}
-                  onMouseOut={e => e.currentTarget.style.opacity=0}
-                >
-                  <span style={{ color:'#fff', fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase' }}>{item.label}</span>
-                </div>
               </div>
             ))}
           </div>
@@ -354,39 +321,26 @@ export function Contact() {
 
     const form = e.target;
     const data = {
-      from_name:    form.from_name.value,
-      business:     form.business.value,
-      phone:        form.phone.value,
-      email:        form.email.value,
-      buyer_type:   form.buyer_type.value,
-      product:      form.product.value,
-      message:      form.message.value,
-      to_email:     'bishwambharbharatmetals@gmail.com',
+      from_name:  form.from_name.value,
+      business:   form.business.value,
+      phone:      form.phone.value,
+      email:      form.email.value,
+      buyer_type: form.buyer_type.value,
+      product:    form.product.value,
+      message:    form.message.value,
+      to_email:   'bishwambharbharatmetals@gmail.com',
     };
 
-    // EmailJS setup — replace the 3 values below with your own from emailjs.com
-    // Step 1: go to emailjs.com and sign up free
-    // Step 2: add Gmail as your email service
-    // Step 3: create a template and copy the 3 IDs below
-    const SERVICE_ID  = 'service_lqry8kn';
-    const TEMPLATE_ID = 'template_6nbc1wm';
-    const PUBLIC_KEY  = 'dK5VXP7qyhoST_w4z';
+    const SERVICE_ID  = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
 
     fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        service_id:  SERVICE_ID,
-        template_id: TEMPLATE_ID,
-        user_id:     PUBLIC_KEY,
-        template_params: data,
-      }),
+      body: JSON.stringify({ service_id: SERVICE_ID, template_id: TEMPLATE_ID, user_id: PUBLIC_KEY, template_params: data }),
     })
-      .then(res => {
-        setSending(false);
-        if (res.ok) { setDone(true); form.reset(); setTimeout(() => setDone(false), 8000); }
-        else { setError(true); }
-      })
+      .then(res => { setSending(false); if (res.ok) { setDone(true); form.reset(); setTimeout(() => setDone(false), 8000); } else { setError(true); } })
       .catch(() => { setSending(false); setError(true); });
   }
 
@@ -395,13 +349,13 @@ export function Contact() {
       <InnerHero page="Contact" title="Contact us" sub="We respond to all enquiries within one business day." />
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 72, alignItems: 'start' }}>
+          <div className="page-grid-contact" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 72, alignItems: 'start' }}>
             <div>
               <div className="lbl">Contact details</div>
               <div className="accent-rule" />
               <h3 style={{ marginBottom: 8, color: 'var(--navy)' }}>We're easy to reach</h3>
               <p style={{ marginBottom: 24 }}>Phone, WhatsApp, or email — reach us however is easiest for you.</p>
-              {[['📞','Phone',<a href="tel:+91XXXXXXXXXX" style={{ color:'var(--accent)' }}>+91 XXXXX XXXXX</a>],['✉️','Email',<a href="mailto:info@bbmetals.in" style={{ color:'var(--accent)' }}>info@bbmetals.in</a>],['📍','Address','[Factory Address], Bihar, India'],['🕐','Hours','Mon – Sat, 9:00 am – 6:00 pm IST']].map(([icon,label,val]) => (
+              {[['📞','Phone',<a key="ph" href="tel:+91XXXXXXXXXX" style={{ color:'var(--accent)' }}>+91 XXXXX XXXXX</a>],['✉️','Email',<a key="em" href="mailto:info@bbmetals.in" style={{ color:'var(--accent)' }}>info@bbmetals.in</a>],['📍','Address','[Factory Address], Bihar, India'],['🕐','Hours','Mon – Sat, 9:00 am – 6:00 pm IST']].map(([icon,label,val]) => (
                 <div key={label} style={{ display:'flex',gap:14,padding:'18px 0',borderBottom:'1px solid var(--rule-lt)' }}>
                   <span style={{ fontSize:18,width:28,textAlign:'center',flexShrink:0,paddingTop:2 }}>{icon}</span>
                   <div>
@@ -410,8 +364,6 @@ export function Contact() {
                   </div>
                 </div>
               ))}
-
-              {/* Social media */}
               <div style={{ marginTop: 24, marginBottom: 8 }}>
                 <div style={{ fontSize:10,fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase',color:'var(--text-mid)',marginBottom:12 }}>Follow us</div>
                 <div style={{ display:'flex',gap:8,flexWrap:'wrap' }}>
@@ -443,46 +395,52 @@ export function Contact() {
               <div className="lbl">Send a message</div>
               <div className="accent-rule" />
               <h3 style={{ marginBottom: 20, color: 'var(--navy)' }}>Send an enquiry</h3>
-              <form onSubmit={handleSubmit} style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:14 }}>
-                {[['Full name *','text','Your name',true,'from_name'],['Business name','text','If applicable',false,'business'],['Mobile number *','tel','+91 XXXXX XXXXX',true,'phone'],['Email','email','your@email.com',false,'email']].map(([label,type,ph,req,name]) => (
-                  <div key={label} style={{ display:'flex',flexDirection:'column',gap:5 }}>
-                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>{label}</label>
-                    <input name={name} type={type} placeholder={ph} required={req} style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
+              <form onSubmit={handleSubmit} className="contact-form" style={{ display:'flex', flexDirection:'column', gap:14 }}>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:14 }} className="form-row-2">
+                  <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
+                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Full name *</label>
+                    <input name="from_name" type="text" placeholder="Your name" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
                   </div>
-                ))}
-                <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
-                  <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>I am a *</label>
-                  <select name="buyer_type" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }}>
-                    <option value="">Select</option>
-                    {['Home buyer','Restaurant / Hotel','School / Hostel / Canteen','Distributor / Wholesaler','Dealer / Retailer','Government / Institutional buyer','Other'].map(o => <option key={o}>{o}</option>)}
-                  </select>
+                  <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
+                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Business name</label>
+                    <input name="business" type="text" placeholder="If applicable" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
+                  </div>
+                </div>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:14 }} className="form-row-2">
+                  <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
+                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Mobile number *</label>
+                    <input name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
+                  </div>
+                  <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
+                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Email</label>
+                    <input name="email" type="email" placeholder="your@email.com" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
+                  </div>
+                </div>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:14 }} className="form-row-2">
+                  <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
+                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>I am a *</label>
+                    <select name="buyer_type" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }}>
+                      <option value="">Select</option>
+                      {['Home buyer','Restaurant / Hotel','School / Hostel / Canteen','Distributor / Wholesaler','Dealer / Retailer','Government / Institutional buyer','Other'].map(o => <option key={o}>{o}</option>)}
+                    </select>
+                  </div>
+                  <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
+                    <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Product interest</label>
+                    <select name="product" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }}>
+                      <option value="">Select</option>
+                      {['Stainless steel plates','Stainless steel bowls','Stainless steel glasses','Full range / dinner set','Bulk / trade order','Other'].map(o => <option key={o}>{o}</option>)}
+                    </select>
+                  </div>
                 </div>
                 <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
-                  <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Product interest</label>
-                  <select name="product" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }}>
-                    <option value="">Select</option>
-                    {['Stainless steel plates','Stainless steel bowls','Stainless steel glasses','Full range / dinner set','Bulk / trade order','Other'].map(o => <option key={o}>{o}</option>)}
-                  </select>
-                </div>
-                <div style={{ display:'flex',flexDirection:'column',gap:5,gridColumn:'span 2' }}>
                   <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Your message</label>
                   <textarea name="message" rows={4} placeholder="Tell us what you need — product, quantity, location, or any questions..." style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none',resize:'vertical' }} />
                 </div>
-                <div style={{ gridColumn:'span 2' }}>
-                  <button type="submit" className="btn-primary" disabled={sending}>
-                    {sending ? 'Sending...' : 'Send enquiry →'}
-                  </button>
+                <div>
+                  <button type="submit" className="btn-primary" disabled={sending}>{sending ? 'Sending...' : 'Send enquiry →'}</button>
                 </div>
-                {done && (
-                  <div style={{ gridColumn:'span 2',background:'#EDF7ED',border:'1px solid #A8D5A8',padding:'13px 16px',fontSize:14,color:'#2E5E2E',borderRadius:2 }}>
-                    ✓ Message received — we'll be in touch within one business day.
-                  </div>
-                )}
-                {error && (
-                  <div style={{ gridColumn:'span 2',background:'#FDE8E8',border:'1px solid #F5A5A5',padding:'13px 16px',fontSize:14,color:'#7A2020',borderRadius:2 }}>
-                    ⚠️ Something went wrong. Please try WhatsApp or call us directly.
-                  </div>
-                )}
+                {done && <div style={{ background:'#EDF7ED',border:'1px solid #A8D5A8',padding:'13px 16px',fontSize:14,color:'#2E5E2E',borderRadius:2 }}>✓ Message received — we'll be in touch within one business day.</div>}
+                {error && <div style={{ background:'#FDE8E8',border:'1px solid #F5A5A5',padding:'13px 16px',fontSize:14,color:'#7A2020',borderRadius:2 }}>⚠️ Something went wrong. Please try WhatsApp or call us directly.</div>}
               </form>
             </div>
           </div>
