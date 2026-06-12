@@ -141,6 +141,26 @@ function formatAnswer(result, data) {
   }
 }
 
+// ── Google Sheets logging URL ──
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwgNH_Pq44U0qTJsL8rxP8kDK6465OWw-n7V8yVSgZA9arfVy5f_9_A8PLfpP35c0ms/exec';
+
+function logToSheets(visitorMessage, botResponse) {
+  const now = new Date();
+  fetch(SHEETS_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      date: now.toLocaleDateString('en-IN'),
+      time: now.toLocaleTimeString('en-IN'),
+      visitorMessage,
+      botResponse,
+      page: window.location.href,
+      sessionId: sessionStorage.getItem('chat_session') || 'unknown',
+    }),
+  }).catch(() => {});
+}
+
 // ── Load and parse Excel ──
 async function loadChatbotData() {
   try {
@@ -188,6 +208,10 @@ export default function Chatbot() {
   // Load data on first open
   useEffect(() => {
     if (open && !data) {
+      // Set session ID
+      if (!sessionStorage.getItem('chat_session')) {
+        sessionStorage.setItem('chat_session', Date.now().toString());
+      }
       setLoading(true);
       loadChatbotData().then(d => {
         setData(d);
@@ -231,13 +255,14 @@ export default function Chatbot() {
 
     if (answer) {
       addBotMessage(answer);
+      logToSheets(q, answer);
     } else {
       // Fallback — offer contact options
       const phone = data.company['Phone number'] || '+91 XXXXX XXXXX';
       const wa = data.company['WhatsApp number'] || phone;
-      addBotMessage(
-        `I'm not sure about that, but our team can help you directly!\n\n📞 *Call us:* ${phone}\n💬 *WhatsApp:* ${wa}\n✉️ *Email:* ${data.company['Email'] || 'bishwambharbharatmetals@gmail.com'}\n\nOr use the Contact form on this website and we'll reply within 24 hours.`
-      );
+      const fallback = `I'm not sure about that, but our team can help you directly!\n\n📞 *Call us:* ${phone}\n💬 *WhatsApp:* ${wa}\n✉️ *Email:* ${data.company['Email'] || 'bishwambharbharatmetals@gmail.com'}\n\nOr use the Contact form on this website and we'll reply within 24 hours.`;
+      addBotMessage(fallback);
+      logToSheets(q, 'fallback — ' + fallback);
     }
   }
 
