@@ -414,10 +414,13 @@ function ArticlePage({ article, onBack }) {
 /* ── BLOG LIST PAGE ── */
 export default function Blog({ onNav }) {
   const [openArticle, setOpenArticle] = useState(null);
+  const [filterCat, setFilterCat] = useState(null);
 
   if (openArticle) {
     return <ArticlePage article={openArticle} onBack={() => setOpenArticle(null)} />;
   }
+
+  const filtered = filterCat ? ARTICLES.filter(a => a.cat === filterCat) : ARTICLES;
 
   return (
     <div>
@@ -434,7 +437,13 @@ export default function Blog({ onNav }) {
         <div className="container">
           <div className="blog-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 44 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-              {ARTICLES.map(article => (
+              {filterCat && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 4 }}>
+                  <span style={{ fontSize: 13, color: 'var(--text-mid)' }}>Showing: <strong style={{ color: 'var(--navy)' }}>{filterCat}</strong></span>
+                  <button onClick={() => setFilterCat(null)} style={{ background: 'none', border: '1px solid var(--rule-lt)', padding: '4px 10px', fontSize: 11, cursor: 'pointer', borderRadius: 2, color: 'var(--accent)', fontWeight: 700 }}>Show all ×</button>
+                </div>
+              )}
+              {filtered.map(article => (
                 <div
                   key={article.id}
                   className="blog-hcard"
@@ -467,8 +476,11 @@ export default function Blog({ onNav }) {
               <div style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', padding: 20, marginBottom: 18 }}>
                 <h4 style={{ fontFamily: 'Barlow Condensed', fontSize: 14, fontWeight: 700, textTransform: 'uppercase', marginBottom: 14, paddingBottom: 10, borderBottom: '2px solid var(--accent)' }}>Categories</h4>
                 {[['Product knowledge', 2], ['Manufacturing', 1], ['Industry insights', 1]].map(([cat, count]) => (
-                  <div key={cat} style={{ display: 'flex', justifyContent: 'space-between', padding: '9px 0', borderBottom: '1px solid var(--rule-lt)', fontSize: 13, color: 'var(--text-mid)', cursor: 'pointer' }}>
-                    <span>{cat}</span><span style={{ fontSize: 11, background: 'var(--navy)', color: '#fff', padding: '2px 8px', borderRadius: 10 }}>{count}</span>
+                  <div key={cat} onClick={() => { setFilterCat(filterCat === cat ? null : cat); window.scrollTo({ top: 300, behavior: 'smooth' }); }} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 0', borderBottom: '1px solid var(--rule-lt)', fontSize: 13, color: filterCat === cat ? 'var(--accent)' : 'var(--text-mid)', cursor: 'pointer', fontWeight: filterCat === cat ? 700 : 400, transition: 'all 0.15s' }}
+                    onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'}
+                    onMouseOut={e => e.currentTarget.style.color = filterCat === cat ? 'var(--accent)' : 'var(--text-mid)'}
+                  >
+                    <span>{cat}</span><span style={{ fontSize: 11, background: filterCat === cat ? 'var(--accent)' : 'var(--navy)', color: '#fff', padding: '2px 8px', borderRadius: 10, transition: 'background 0.15s' }}>{count}</span>
                   </div>
                 ))}
               </div>

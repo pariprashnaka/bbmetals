@@ -272,7 +272,7 @@ export function Contact() {
     const data = {
       from_name:  form.from_name.value,
       business:   form.business.value,
-      phone:      form.phone.value,
+      phone:      form.country_code.value + ' ' + form.phone.value,
       email:      form.email.value,
       buyer_type: form.buyer_type.value,
       product:    form.product.value,
@@ -358,7 +358,33 @@ export function Contact() {
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }} className="form-row-2">
                   <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
                     <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Mobile number *</label>
-                    <input name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
+                    <div style={{ display:'flex', gap:6 }}>
+                      <select name="country_code" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 8px',fontSize:13,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none',width:90,flexShrink:0 }} defaultValue="+91">
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+966">🇸🇦 +966</option>
+                        <option value="+968">🇴🇲 +968</option>
+                        <option value="+974">🇶🇦 +974</option>
+                        <option value="+965">🇰🇼 +965</option>
+                        <option value="+973">🇧🇭 +973</option>
+                        <option value="+977">🇳🇵 +977</option>
+                        <option value="+880">🇧🇩 +880</option>
+                        <option value="+94">🇱🇰 +94</option>
+                        <option value="+60">🇲🇾 +60</option>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+81">🇯🇵 +81</option>
+                        <option value="+86">🇨🇳 +86</option>
+                        <option value="+27">🇿🇦 +27</option>
+                        <option value="+234">🇳🇬 +234</option>
+                        <option value="+254">🇰🇪 +254</option>
+                      </select>
+                      <input name="phone" type="tel" placeholder="XXXXX XXXXX" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none',flex:1 }} />
+                    </div>
                   </div>
                   <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
                     <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Email</label>
