@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
+import './mobile.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatBar from './components/FloatBar';
