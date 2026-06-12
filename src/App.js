@@ -8,7 +8,8 @@ import LeadPopup from './components/LeadPopup';
 import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import './pages/Home.css';
-import { About, Products, Quality, Blog, Gallery, Contact } from './pages/Pages';
+import { About, Products, Quality, Gallery, Contact } from './pages/Pages';
+import Blog from './pages/Blog';
 
 export default function App() {
   const [page, setPage] = useState('Home');

@@ -1,4 +1,5 @@
 import React from 'react';
+export { default as Blog } from './Blog';
 
 /* ─────────── INNER HERO ─────────── */
 function InnerHero({ page, title, sub }) {
@@ -201,58 +202,6 @@ export function Quality() {
   );
 }
 
-/* ─────────── BLOG ─────────── */
-export function Blog({ onNav }) {
-  const posts = [
-    { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for when buying.', img: '/images/Blog_Image_1___Steel_grades_article.png' },
-    { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the full production process — blanking, forming, polishing, inspection, packaging.', img: '/images/Blog_Image_2___Manufacturing_process_article_.png' },
-    { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — why SS stays dominant in Indian homes decade after decade.', img: '/images/Blog_Image_3___Industry_insights_article.png' },
-    { cat: 'Product knowledge', date: '18 Dec 2024', title: 'Material thickness and durability: what gauge means in SS', desc: 'Gauge numbers explained simply — actual thickness in mm and what thicker steel gives you in real use.', img: '/images/Blog_Image_4___Material_thickness_article.png' },
-  ];
-
-  return (
-    <div>
-      <InnerHero page="Blog" title="Industry insights" sub="Knowledge on stainless steel products, manufacturing, and the Indian metals industry." />
-      <section className="section" style={{ background: '#fff' }}>
-        <div className="container">
-          <div className="blog-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: 44 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              {posts.map(p => (
-                <div key={p.title} className="blog-hcard" style={{ display: 'grid', gridTemplateColumns: '200px 1fr', background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden', cursor: 'pointer', transition: 'box-shadow 0.2s' }}>
-                  <div style={{ overflow: 'hidden', height: 150 }}>
-                    <img src={p.img} alt={p.title} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
-                  </div>
-                  <div style={{ padding: '18px 24px' }}>
-                    <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--accent)' }}>{p.cat}</span>
-                    <span style={{ fontSize: 11, color: 'var(--text-mid)', marginLeft: 10 }}>{p.date}</span>
-                    <h3 style={{ fontFamily: 'Barlow Condensed', fontSize: 18, fontWeight: 700, textTransform: 'uppercase', color: 'var(--navy)', margin: '8px 0 7px', lineHeight: 1.25 }}>{p.title}</h3>
-                    <p style={{ fontSize: 13 }}>{p.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="blog-sidebar">
-              <div style={{ background: 'var(--light)', border: '1px solid var(--rule-lt)', padding: 20, marginBottom: 18 }}>
-                <h4 style={{ fontFamily: 'Barlow Condensed', fontSize: 14, fontWeight: 700, textTransform: 'uppercase', marginBottom: 14, paddingBottom: 10, borderBottom: '2px solid var(--accent)' }}>Categories</h4>
-                {[['Product knowledge','4'],['Manufacturing','5'],['Industry insights','3'],['Company updates','2']].map(([cat,count]) => (
-                  <div key={cat} style={{ display:'flex',justifyContent:'space-between',padding:'9px 0',borderBottom:'1px solid var(--rule-lt)',fontSize:13,color:'var(--text-mid)',cursor:'pointer' }}>
-                    <span>{cat}</span><span style={{ fontSize:11,color:'var(--text-mid)' }}>{count}</span>
-                  </div>
-                ))}
-              </div>
-              <div style={{ background: 'var(--accent)', padding: 24, textAlign: 'center' }}>
-                <h4 style={{ color: '#fff', marginBottom: 8, fontFamily: 'Barlow Condensed', fontSize: 18, textTransform: 'uppercase' }}>Have a question?</h4>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 16 }}>Product queries, bulk orders, or trade enquiries — we're here.</p>
-                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="btn-dark" style={{ display: 'block' }}>💬 WhatsApp us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
-
 /* ─────────── GALLERY ─────────── */
 export function Gallery() {
   const [active, setActive] = React.useState('all');
@@ -396,7 +345,7 @@ export function Contact() {
               <div className="accent-rule" />
               <h3 style={{ marginBottom: 20, color: 'var(--navy)' }}>Send an enquiry</h3>
               <form onSubmit={handleSubmit} className="contact-form" style={{ display:'flex', flexDirection:'column', gap:14 }}>
-                <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:14 }} className="form-row-2">
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }} className="form-row-2">
                   <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
                     <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Full name *</label>
                     <input name="from_name" type="text" placeholder="Your name" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
@@ -406,7 +355,7 @@ export function Contact() {
                     <input name="business" type="text" placeholder="If applicable" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
                   </div>
                 </div>
-                <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:14 }} className="form-row-2">
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }} className="form-row-2">
                   <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
                     <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>Mobile number *</label>
                     <input name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
@@ -416,7 +365,7 @@ export function Contact() {
                     <input name="email" type="email" placeholder="your@email.com" style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }} />
                   </div>
                 </div>
-                <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:14 }} className="form-row-2">
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14 }} className="form-row-2">
                   <div style={{ display:'flex',flexDirection:'column',gap:5 }}>
                     <label style={{ fontSize:10,fontWeight:700,color:'var(--text-mid)',letterSpacing:'0.1em',textTransform:'uppercase' }}>I am a *</label>
                     <select name="buyer_type" required style={{ border:'1.5px solid var(--rule-lt)',background:'var(--light)',padding:'11px 14px',fontSize:14,fontFamily:'Inter,sans-serif',color:'var(--navy)',borderRadius:2,outline:'none' }}>
