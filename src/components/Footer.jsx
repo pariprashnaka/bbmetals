@@ -47,13 +47,13 @@ export default function Footer() {
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--sand)', marginBottom: 16 }}>Contact</div>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', lineHeight: 2.2 }}>
               <a href="tel:+91XXXXXXXXXX" style={{ display: 'block', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>📞 +91 XXXXX XXXXX</a>
-              <a href="mailto:bishwambharbharatmetals@gmail.com" style={{ display: 'block', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>✉️ bishwambharbharatmetals@gmail.com</a>
+              <a href="mailto:bishwambharbharatmetals@gmail.com" style={{ display: 'block', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>bishwambharbharatmetals@gmail.com</a>
               <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>💬 WhatsApp us</a>
             </div>
             <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
-              <a href="https://www.instagram.com/bishwambharbharatmetals/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 18, textDecoration: 'none' }}>📷</a>
-              <a href="https://www.facebook.com/profile.php?id=61590358276975" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 18, textDecoration: 'none' }}>📘</a>
-              <a href="https://x.com/bbharatmetals" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 18, textDecoration: 'none' }}>🐦</a>
+              <a href="https://www.instagram.com/bishwambharbharatmetals/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 18, textDecoration: 'none' }}><span style={{fontSize:11,fontWeight:600}}>IG</span></a>
+              <a href="https://www.facebook.com/profile.php?id=61590358276975" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 18, textDecoration: 'none' }}><span style={{fontSize:11,fontWeight:600}}>FB</span></a>
+              <a href="https://x.com/bbharatmetals" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.3)', fontSize: 18, textDecoration: 'none' }}><span style={{fontSize:11,fontWeight:600}}>X</span></a>
             </div>
           </div>
         </div>
