@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import SEO from "../components/SEO";
+import React, { useState } from 'react';
 
 /* ── CHART COMPONENTS ── */
 
@@ -330,7 +328,7 @@ function Article4() {
 /* ── ARTICLE DATA ── */
 const ARTICLES = [
   {
-    id: 1, slug: "ss-grades-202-304-guide",
+    id: 1,
     cat: 'Product knowledge',
     date: '12 Jan 2025',
     readTime: '7 min read',
@@ -340,7 +338,7 @@ const ARTICLES = [
     component: Article1,
   },
   {
-    id: 2, slug: "how-ss-utensils-are-made",
+    id: 2,
     cat: 'Manufacturing',
     date: '5 Jan 2025',
     readTime: '8 min read',
@@ -350,7 +348,7 @@ const ARTICLES = [
     component: Article2,
   },
   {
-    id: 3, slug: "why-stainless-steel-dominates-india",
+    id: 3,
     cat: 'Industry insights',
     date: '28 Dec 2024',
     readTime: '6 min read',
@@ -360,7 +358,7 @@ const ARTICLES = [
     component: Article3,
   },
   {
-    id: 4, slug: "gauge-thickness-guide",
+    id: 4,
     cat: 'Product knowledge',
     date: '18 Dec 2024',
     readTime: '6 min read',
@@ -372,7 +370,7 @@ const ARTICLES = [
 ];
 
 /* ── ARTICLE PAGE ── */
-function ArticlePage({ article }) {
+function ArticlePage({ article, onBack }) {
   const Content = article.component;
   return (
     <div>
@@ -380,7 +378,7 @@ function ArticlePage({ article }) {
       <div style={{ background: 'var(--navy)', padding: '48px 0 40px', borderBottom: '3px solid var(--sand)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.025, backgroundImage: 'repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <button onClick={() => window.history.back()} style={{ background: 'none', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.5)', padding: '6px 14px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', marginBottom: 20, borderRadius: 2 }}>← Back to blog</button>
+          <button onClick={onBack} style={{ background: 'none', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.5)', padding: '6px 14px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', marginBottom: 20, borderRadius: 2 }}>← Back to blog</button>
           <div style={{ display: 'flex', gap: 12, marginBottom: 16, flexWrap: 'wrap' }}>
             <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--accent)' }}>{article.cat}</span>
             <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)' }}>{article.date}</span>
@@ -404,7 +402,7 @@ function ArticlePage({ article }) {
             <hr style={{ border: 'none', borderTop: '1px solid var(--rule-lt)', margin: '40px 0' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
               <div style={{ fontSize: 12, color: 'var(--text-mid)' }}>Published by Bishwambhar Bharat Metals · {article.date}</div>
-              <button onClick={() => window.history.back()} style={{ background: 'var(--navy)', color: '#fff', border: 'none', padding: '10px 20px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', cursor: 'pointer', borderRadius: 2 }}>← Back to all articles</button>
+              <button onClick={onBack} style={{ background: 'var(--navy)', color: '#fff', border: 'none', padding: '10px 20px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', cursor: 'pointer', borderRadius: 2 }}>← Back to all articles</button>
             </div>
           </div>
         </div>
@@ -414,12 +412,12 @@ function ArticlePage({ article }) {
 }
 
 /* ── BLOG LIST PAGE ── */
-export default function Blog() {
-  const { slug } = useParams(); const navigate = useNavigate(); const openArticle = slug ? ARTICLES.find(a => a.slug === slug) : null;
+export default function Blog({ onNav }) {
+  const [openArticle, setOpenArticle] = useState(null);
   const [filterCat, setFilterCat] = useState(null);
 
   if (openArticle) {
-    return <ArticlePage article={openArticle} />;
+    return <ArticlePage article={openArticle} onBack={() => setOpenArticle(null)} />;
   }
 
   const filtered = filterCat ? ARTICLES.filter(a => a.cat === filterCat) : ARTICLES;
@@ -450,7 +448,7 @@ export default function Blog() {
                   key={article.id}
                   className="blog-hcard"
                   style={{ display: 'grid', gridTemplateColumns: '220px 1fr', background: '#fff', border: '1px solid var(--rule-lt)', overflow: 'hidden', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s' }}
-                  onClick={() => navigate(`/blog/${article.slug}`)}
+                  onClick={() => setOpenArticle(article)}
                   onMouseOver={e => { e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                   onMouseOut={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
@@ -494,7 +492,7 @@ export default function Blog() {
               <div style={{ background: 'var(--accent)', padding: 24, textAlign: 'center' }}>
                 <h4 style={{ color: '#fff', marginBottom: 8, fontFamily: 'Barlow Condensed', fontSize: 18, textTransform: 'uppercase' }}>Have a question?</h4>
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, marginBottom: 16 }}>Product queries, bulk orders, or trade enquiries — we're here.</p>
-                <button onClick={() => navigate('/contact')} className="btn-dark" style={{ width: '100%' }}>Send an enquiry</button>
+                <button onClick={() => onNav('Contact')} className="btn-dark" style={{ width: '100%' }}>Send an enquiry</button>
               </div>
             </div>
           </div>

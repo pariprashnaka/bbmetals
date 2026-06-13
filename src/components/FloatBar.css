@@ -1,40 +1,38 @@
 .floatbar {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 500;
-  background: var(--navy);
-  border-top: 2px solid var(--sand);
-  display: flex; align-items: center; justify-content: center;
-  height: 58px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 52px;
+  background: #fff;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+  border-top: 1px solid var(--rule-lt);
 }
 
-.fb-item {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  flex: 1; height: 100%; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
-  transition: background 0.15s; max-width: 260px;
-  border-right: 1px solid rgba(255,255,255,0.06);
+.fb-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: background 0.15s;
 }
-.fb-item:last-child { border-right: none; }
 
-.fb-call { color: rgba(255,255,255,0.6); background: transparent; }
-.fb-call:hover { background: rgba(255,255,255,0.04); color: #fff; }
+.fb-call { color: var(--navy); background: #fff; }
+.fb-call:hover { background: var(--light); }
 
-.fb-wa { background: #1A7A40; color: #fff; }
-.fb-wa:hover { background: #156633; }
+.fb-wa { color: #fff; background: #1A7A40; }
+.fb-wa:hover { background: #15652f; }
 
-.fb-enq { background: var(--accent); color: #fff; }
-.fb-enq:hover { background: var(--accent-dk); }
+.fb-enquiry { color: #fff; background: var(--accent); }
+.fb-enquiry:hover { background: #a33d12; }
 
 .fb-icon { font-size: 16px; }
-
-.fb-label {
-  display: flex; flex-direction: column; line-height: 1.1;
-}
-.fb-label small {
-  font-size: 9px; font-weight: 400; opacity: 0.6;
-  text-transform: none; letter-spacing: 0;
-}
-
-@media (max-width: 480px) {
-  .fb-label small { display: none; }
-}

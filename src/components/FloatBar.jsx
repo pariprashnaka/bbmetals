@@ -1,30 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FloatBar.css';
 
-export default function FloatBar({ onEnquire }) {
+export default function FloatBar() {
   return (
     <div className="floatbar">
-      <a href="tel:+91XXXXXXXXXX" className="fb-item fb-call">
+      <a href="tel:+91XXXXXXXXXX" className="fb-btn fb-call">
         <span className="fb-icon">📞</span>
-        <span className="fb-label">
-          Call us
-          <small>+91 XXXXX XXXXX</small>
-        </span>
+        <span className="fb-label">Call us</span>
       </a>
-      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="fb-item fb-wa">
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="fb-btn fb-wa">
         <span className="fb-icon">💬</span>
-        <span className="fb-label">
-          WhatsApp
-          <small>Instant reply</small>
-        </span>
+        <span className="fb-label">WhatsApp</span>
       </a>
-      <button className="fb-item fb-enq" onClick={onEnquire}>
+      <Link to="/contact" className="fb-btn fb-enquiry">
         <span className="fb-icon">✉️</span>
-        <span className="fb-label">
-          Send enquiry
-          <small>Reply in 24 hrs</small>
-        </span>
-      </button>
+        <span className="fb-label">Send enquiry</span>
+      </Link>
     </div>
   );
 }
