@@ -40,7 +40,7 @@ function StructuredData() {
     "alternateName": "BBM",
     "url": "https://bishwambharbharatmetals.com",
     "logo": "https://bishwambharbharatmetals.com/logo.png",
-    "image": "https://bishwambharbharatmetals.com/images/IMAGE_1___Hero_background.png",
+    "image": "https://bishwambharbharatmetals.com/images/IMAGE_1___Hero_background.jpg",
     "description": "Premium stainless steel kitchenware manufacturer based in Bihar, India. SS 202 & SS 304 plates, bowls, glasses for homes, hotels, and distributors.",
     "address": {
       "@type": "PostalAddress",

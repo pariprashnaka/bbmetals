@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const items = [
-  { cat: 'manufacturing', label: 'Press operation', img: '/images/Gallery_Image_1___Press_operation.png' },
-  { cat: 'products', label: 'Metal products', img: '/images/Gallery_Image_2___Metal_products.png' },
-  { cat: 'manufacturing', label: 'Polishing line', img: '/images/Gallery_Image_3___Polishing_line.png' },
-  { cat: 'manufacturing', label: 'Quality inspection', img: '/images/Gallery_Image_4___Quality_inspection.png' },
-  { cat: 'facility', label: 'Production floor', img: '/images/Gallery_Image_5___Production_floor.png' },
-  { cat: 'products', label: 'Metal components', img: '/images/Gallery_Image_6___Metal_components.png' },
-  { cat: 'manufacturing', label: 'Metal forming', img: '/images/Gallery_Image_7___Metal_forming.png' },
-  { cat: 'packaging', label: 'Packaging', img: '/images/Gallery_Image_8___Packaging.png' },
-  { cat: 'facility', label: 'Warehouse', img: '/images/Gallery_Image_9___Warehouse.png' },
+  { cat: 'manufacturing', label: 'Press operation', img: '/images/Gallery_Image_1___Press_operation.jpg' },
+  { cat: 'products', label: 'Metal products', img: '/images/Gallery_Image_2___Metal_products.jpg' },
+  { cat: 'manufacturing', label: 'Polishing line', img: '/images/Gallery_Image_3___Polishing_line.jpg' },
+  { cat: 'manufacturing', label: 'Quality inspection', img: '/images/Gallery_Image_4___Quality_inspection.jpg' },
+  { cat: 'facility', label: 'Production floor', img: '/images/Gallery_Image_5___Production_floor.jpg' },
+  { cat: 'products', label: 'Metal components', img: '/images/Gallery_Image_6___Metal_components.jpg' },
+  { cat: 'manufacturing', label: 'Metal forming', img: '/images/Gallery_Image_7___Metal_forming.jpg' },
+  { cat: 'packaging', label: 'Packaging', img: '/images/Gallery_Image_8___Packaging.jpg' },
+  { cat: 'facility', label: 'Warehouse', img: '/images/Gallery_Image_9___Warehouse.jpg' },
 ];
 
 export default function Gallery() {

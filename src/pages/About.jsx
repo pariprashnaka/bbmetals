@@ -20,7 +20,7 @@ function InnerHero({ page, title, sub }) {
 export default function About() {
   return (
     <div>
-      <SEO title="About Us" description="Learn about Bishwambhar Bharat Metals — stainless steel manufacturer in Bihar, India. Our values, vision, and roadmap." path="/about" image="/images/IMAGE_4___About_us_page.png" />
+      <SEO title="About Us" description="Learn about Bishwambhar Bharat Metals — stainless steel manufacturer in Bihar, India. Our values, vision, and roadmap." path="/about" image="/images/IMAGE_4___About_us_page.jpg" />
       <InnerHero page="About us" title="About us" sub="Built on manufacturing discipline, honest quality, and a long-term vision." />
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
@@ -58,7 +58,7 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-              <img src="/images/IMAGE_4___About_us_page.png" alt="Our facility" style={{ width:'100%', height:'240px', objectFit:'cover', borderRadius:2 }} />
+              <img src="/images/IMAGE_4___About_us_page.jpg" alt="Our facility" style={{ width:'100%', height:'240px', objectFit:'cover', borderRadius:2 }} />
             </div>
           </div>
           <hr className="div-lt" />

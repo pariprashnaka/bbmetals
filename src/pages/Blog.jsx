@@ -335,7 +335,7 @@ const ARTICLES = [
     readTime: '7 min read',
     title: 'Understanding SS grades: 202, 304 and what they mean for your kitchen',
     desc: 'A plain-language guide to the grades used in stainless steel kitchenware — what the numbers mean, how they differ, and what to look for when buying.',
-    img: '/images/Blog_Image_1___Steel_grades_article.png',
+    img: '/images/Blog_Image_1___Steel_grades_article.jpg',
     component: Article1,
   },
   {
@@ -345,7 +345,7 @@ const ARTICLES = [
     readTime: '8 min read',
     title: 'How stainless steel utensils are made: from coil to kitchen',
     desc: 'A step-by-step look at the full production process — blanking, forming, polishing, inspection, and packaging — explained simply for every buyer.',
-    img: '/images/Blog_Image_2___Manufacturing_process_article_.png',
+    img: '/images/Blog_Image_2___Manufacturing_process_article_.jpg',
     component: Article2,
   },
   {
@@ -355,7 +355,7 @@ const ARTICLES = [
     readTime: '6 min read',
     title: "Why stainless steel remains India's favourite kitchenware material",
     desc: 'Data, durability, and the economics of Indian cooking. The reasons behind steel\'s dominance in Indian homes — and why that isn\'t changing.',
-    img: '/images/Blog_Image_3___Industry_insights_article.png',
+    img: '/images/Blog_Image_3___Industry_insights_article.jpg',
     component: Article3,
   },
   {
@@ -365,7 +365,7 @@ const ARTICLES = [
     readTime: '6 min read',
     title: 'Material thickness and durability: what gauge means in stainless steel',
     desc: 'Gauge numbers explained simply — actual thickness in millimetres, what it means for durability, and how to check what you\'re actually getting.',
-    img: '/images/Blog_Image_4___Material_thickness_article.png',
+    img: '/images/Blog_Image_4___Material_thickness_article.jpg',
     component: Article4,
   },
 ];

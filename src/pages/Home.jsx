@@ -31,7 +31,7 @@ export default function Home() {
       <div className="hero">
         <div className="hero-texture" />
         <div className="hero-img-bg">
-          <img src="/images/IMAGE_1___Hero_background.png" alt="Manufacturing facility" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+          <img src="/images/IMAGE_1___Hero_background.jpg" alt="Manufacturing facility" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
         </div>
         <div className="hero-overlay" />
         <div className="hero-fire-top" />
@@ -58,7 +58,7 @@ export default function Home() {
       <section className="section overview-section" style={{ background: '#fff', padding: 0 }}>
         <div className="overview-grid">
           <div className="ov-img-wrap">
-            <img src="/images/IMAGE_2___Homepage_overview_section.png" alt="Manufacturing operations" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+            <img src="/images/IMAGE_2___Homepage_overview_section.jpg" alt="Manufacturing operations" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
             <div className="ov-badge"><div className="ov-badge-big">SS 202</div><div className="ov-badge-sm">Food-grade steel</div></div>
           </div>
           <div className="ov-content">
@@ -89,10 +89,10 @@ export default function Home() {
           </div>
           <div className="prod-grid">
             {[
-              { name: 'Stainless steel plates', desc: 'Classic thali in food-grade SS. Built for everyday home use and beyond.', img: '/images/IMAGE_5___Products_page___Product_1.png', alt: 'Stainless steel plates' },
-              { name: 'Stainless steel bowls', desc: 'Seamless katori and serving bowls. Smooth finish, sturdy for every meal.', img: '/images/IMAGE_6___Products_page___Product_2_.png', alt: 'Stainless steel bowls' },
-              { name: 'Stainless steel glasses', desc: 'Rust-free tumblers built to last. A staple in every Indian household.', img: '/images/IMAGE_7___Products_page___Product_3_.png', alt: 'Stainless steel glasses' },
-              { name: 'Other kitchenware', desc: 'More SS kitchen items available. Tell us what you need.', img: '/images/IMAGE_8___Products_page___Product_4.png', alt: 'Other metal products' },
+              { name: 'Stainless steel plates', desc: 'Classic thali in food-grade SS. Built for everyday home use and beyond.', img: '/images/IMAGE_5___Products_page___Product_1.jpg', alt: 'Stainless steel plates' },
+              { name: 'Stainless steel bowls', desc: 'Seamless katori and serving bowls. Smooth finish, sturdy for every meal.', img: '/images/IMAGE_6___Products_page___Product_2_.jpg', alt: 'Stainless steel bowls' },
+              { name: 'Stainless steel glasses', desc: 'Rust-free tumblers built to last. A staple in every Indian household.', img: '/images/IMAGE_7___Products_page___Product_3_.jpg', alt: 'Stainless steel glasses' },
+              { name: 'Other kitchenware', desc: 'More SS kitchen items available. Tell us what you need.', img: '/images/IMAGE_8___Products_page___Product_4.jpg', alt: 'Other metal products' },
             ].map((p) => (
               <Link key={p.name} to="/products" className="prod-card" style={{ textDecoration:'none' }}>
                 <div className="prod-img"><img src={p.img} alt={p.alt} style={{ width:'100%', height:'100%', objectFit:'cover' }} /></div>
@@ -138,7 +138,7 @@ export default function Home() {
 
       {/* QUALITY SPLIT */}
       <div className="q-split">
-        <div className="q-img-side"><img src="/images/IMAGE_3___Homepage_quality_section.png" alt="Quality inspection" style={{ width:'100%', height:'100%', objectFit:'cover' }} /></div>
+        <div className="q-img-side"><img src="/images/IMAGE_3___Homepage_quality_section.jpg" alt="Quality inspection" style={{ width:'100%', height:'100%', objectFit:'cover' }} /></div>
         <div className="q-content-side">
           <div className="lbl">Our promise</div><div className="accent-rule" />
           <h2 style={{ color: '#fff', marginBottom: 16 }}>Quality built in,<br />not added on.</h2>
@@ -180,9 +180,9 @@ export default function Home() {
           </div>
           <div className="blog-grid">
             {[
-              { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for.', img: '/images/Blog_Image_1___Steel_grades_article.png', slug: 'ss-grades-202-304-guide' },
-              { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the production process — explained simply for every buyer.', img: '/images/Blog_Image_2___Manufacturing_process_article_.png', slug: 'how-ss-utensils-are-made' },
-              { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — the reasons SS stays dominant in Indian homes.', img: '/images/Blog_Image_3___Industry_insights_article.png', slug: 'why-stainless-steel-dominates-india' },
+              { cat: 'Product knowledge', date: '12 Jan 2025', title: 'Understanding SS grades: 202, 304 and what they mean', desc: 'A plain-language guide to grades used in kitchenware — what the numbers mean and what to look for.', img: '/images/Blog_Image_1___Steel_grades_article.jpg', slug: 'ss-grades-202-304-guide' },
+              { cat: 'Manufacturing', date: '5 Jan 2025', title: 'How stainless steel utensils are made: from coil to kitchen', desc: 'A step-by-step look at the production process — explained simply for every buyer.', img: '/images/Blog_Image_2___Manufacturing_process_article_.jpg', slug: 'how-ss-utensils-are-made' },
+              { cat: 'Industry insights', date: '28 Dec 2024', title: "Why stainless steel remains India's favourite kitchenware material", desc: 'Durability, hygiene, and value — the reasons SS stays dominant in Indian homes.', img: '/images/Blog_Image_3___Industry_insights_article.jpg', slug: 'why-stainless-steel-dominates-india' },
             ].map((b) => (
               <Link key={b.title} to={`/blog/${b.slug}`} className="blog-card" style={{ textDecoration:'none', color:'inherit' }}>
                 <div className="blog-img" style={{ height: 190, overflow: 'hidden' }}>

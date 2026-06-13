@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const SITE = 'https://bishwambharbharatmetals.com';
 const BRAND = 'Bishwambhar Bharat Metals';
 const DEFAULT_DESC = 'Premium stainless steel kitchenware manufacturer in Bihar, India. SS 202 & SS 304 plates, bowls, glasses for homes, hotels, and distributors.';
-const DEFAULT_IMG = `${SITE}/images/IMAGE_1___Hero_background.png`;
+const DEFAULT_IMG = `${SITE}/images/IMAGE_1___Hero_background.jpg`;
 
 export default function SEO({ title, description, path, image, article }) {
   const pageTitle = title ? `${title} — ${BRAND}` : `${BRAND} — Stainless Steel Manufacturer, Bihar India`;
