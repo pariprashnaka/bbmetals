@@ -26,7 +26,7 @@ export default function Navbar() {
       <header className="navbar">
         <div className="nb-inner">
           <Link to="/" className="nb-brand">
-            <img src="/logo.png" alt="Bishwambhar Bharat Metals" style={{ width: 44, height: 44, objectFit: 'contain', borderRadius: 4 }} />
+            <img src="/logo.webp" alt="Bishwambhar Bharat Metals" style={{ width: 44, height: 44, objectFit: 'contain', borderRadius: 4 }} />
             <div className="nb-brand-text">
               <span className="nb-name">Bishwambhar Bharat Metals</span>
             </div>
