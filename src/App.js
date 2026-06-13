@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatBar from './components/FloatBar';
 import LeadPopup from './components/LeadPopup';
+import ExitPopup from './components/ExitPopup';
 import Chatbot from './components/Chatbot';
 import Home from './pages/Home';
 import './pages/Home.css';
@@ -39,6 +40,7 @@ export default function App() {
       <Footer onNav={navigate} />
       <FloatBar onEnquire={() => navigate('Contact')} />
       <LeadPopup />
+      <ExitPopup />
       <Chatbot />
     </>
   );

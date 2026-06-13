@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import TrustSection from '../components/TrustSection';
 
 const Ticker = () => {
   const items = ['Stainless Steel Plates', 'Stainless Steel Bowls', 'Stainless Steel Glasses',
@@ -168,6 +169,9 @@ export default function Home({ onNav }) {
           <button className="btn-outline-light" style={{ marginTop: 28 }} onClick={() => onNav('Quality')}>View quality details</button>
         </div>
       </div>
+
+      {/* TRUST SIGNALS */}
+      <TrustSection />
 
       {/* CONTACT BAND */}
       <div className="cband">
