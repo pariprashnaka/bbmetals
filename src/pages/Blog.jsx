@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import SEO from "../components/SEO";
+import { useParams, useNavigate } from "react-router-dom";
 
 /* ── CHART COMPONENTS ── */
 
