@@ -6,21 +6,21 @@ export default function ExitPopup() {
   const [phone, setPhone] = useState('');
 
   useEffect(() => {
-    if (sessionStorage.getItem('exit_popup_shown')) return;
+    if (localStorage.getItem('exit_popup_shown_v2')) return;
 
     // Desktop: detect mouse leaving viewport
     function handleMouseLeave(e) {
-      if (e.clientY < 10 && !sessionStorage.getItem('exit_popup_shown')) {
+      if (e.clientY < 10 && !localStorage.getItem('exit_popup_shown_v2')) {
         setVisible(true);
-        sessionStorage.setItem('exit_popup_shown', 'true');
+        localStorage.setItem('exit_popup_shown_v2', 'true');
         document.removeEventListener('mouseleave', handleMouseLeave);
       }
     }
 
     // Mobile: detect back button or tab switch (visibilitychange)
     function handleVisibility() {
-      if (document.visibilityState === 'hidden' && !sessionStorage.getItem('exit_popup_shown')) {
-        sessionStorage.setItem('exit_popup_shown', 'true');
+      if (document.visibilityState === 'hidden' && !localStorage.getItem('exit_popup_shown_v2')) {
+        localStorage.setItem('exit_popup_shown_v2', 'true');
       }
     }
 

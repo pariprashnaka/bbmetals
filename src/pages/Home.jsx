@@ -56,12 +56,12 @@ export default function Home() {
 
       {/* OVERVIEW */}
       <section className="section overview-section" style={{ background: '#fff', padding: 0 }}>
-        <div className="overview-grid">
-          <div className="ov-img-wrap">
+        <div className="overview-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr" }}>
+          <div className="ov-img-wrap" style={{ minHeight:400, position:"relative" }}>
             <img loading="lazy" src="/images/IMAGE_2___Homepage_overview_section.webp" alt="Manufacturing operations" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
             <div className="ov-badge"><div className="ov-badge-big">SS 202</div><div className="ov-badge-sm">Food-grade steel</div></div>
           </div>
-          <div className="ov-content">
+          <div className="ov-content" style={{ padding:"48px 52px" }}>
             <div className="lbl">Who we are</div><div className="accent-rule" />
             <h2 style={{ color: 'var(--navy)' }} className="mb-16">Built to<br />manufacture.<br />Made to last.</h2>
             <p className="mb-16">Bishwambhar Bharat Metals is a stainless steel manufacturing company based in Bihar, India. We make products that belong in Indian kitchens — durable, rust-free, and backed by real manufacturing discipline.</p>
