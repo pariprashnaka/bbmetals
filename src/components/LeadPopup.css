@@ -97,3 +97,21 @@
   .popup-box { padding: 32px 24px 24px; }
   .popup-title { font-size: 22px; }
 }
+
+@media (max-width: 768px) {
+  .popup-box {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    padding: 24px 18px !important;
+    margin: 0 !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .popup-title {
+    font-size: 22px !important;
+  }
+  .popup-overlay {
+    padding: 16px !important;
+    align-items: center !important;
+  }
+}

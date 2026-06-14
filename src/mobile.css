@@ -21,3 +21,18 @@
   .container { padding: 0 16px !important; }
   .nb-inner { padding: 0 16px !important; }
 }
+
+@media (max-width: 768px) {
+  .lead-popup-overlay > div {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    margin: 0 auto !important;
+    padding: 24px 18px !important;
+  }
+  .lead-popup-overlay > div h3 {
+    font-size: 22px !important;
+  }
+  .lead-popup-overlay > div p {
+    font-size: 13px !important;
+  }
+}
